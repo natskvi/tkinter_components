@@ -23,7 +23,8 @@ class CalendarFrame(Tkinter.LabelFrame):
         def getdate():
             cd = CalendarDialog(self)
             result = cd.result
-            self.selected_date.set(result.strftime("%m/%d/%Y"))
+            if None != result:
+                self.selected_date.set(result.strftime("%m/%d/%Y"))
 
         self.selected_date = Tkinter.StringVar()
 
